@@ -3,4 +3,5 @@ from . import views
 
 urlpatterns = [
     path("register", views.create_employee),
+    
 ]
