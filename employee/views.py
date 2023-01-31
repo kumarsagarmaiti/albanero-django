@@ -20,9 +20,8 @@ def get_employee(request):
 
 @api_view(["GET", "PUT", "DELETE"])
 def employee(request, employee_id):
+    converted_id = ObjectId(employee_id)
     if request.method == "GET":
-        print(employee_id)
-        converted_id = ObjectId(employee_id)
         employee_docs = HttpResponse(
             list(connection_handler.find({"_id": converted_id}, {"_id": 0}))
         )
